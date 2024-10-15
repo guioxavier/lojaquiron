@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - Produtos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        header, footer { text-align: center; }
+        .produtos { display: flex; flex-wrap: wrap; justify-content: space-between; }
+        .coluna { width: 18%; margin: 1%; }
+        .produto { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        .preco { font-weight: bold; }
+        #carrinho { margin-top: 20px; text-align: center; }
+        .whatsapp-button { background-color: #25D366; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+        .whatsapp-button a { color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Loja de Produtos</h1>
+        <p>preço revenda exclusivo para montagem de maquina</p>
+    </header>
+
+    <main>
+        <section class="produtos">
+            <div class="coluna">
+                <div class="produto">
+                    <h2>I3 2ª Geração</h2>
+                    <p class="preco">R$ 10,90</p>
+                    <button onclick="adicionarAoCarrinho(10,90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>I3 3ª Geração</h2>
+                    <p class="preco">R$ 30,90</p>
+                    <button onclick="adicionarAoCarrinho(30,90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>I3 4ª Geração</h2>
+                    <p class="preco">R$ 40,90</p>
+                    <button onclick="adicionarAoCarrinho(40,90)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="produto">
+                    <h2>4GB</h2>
+                    <p class="preco">R$ 51,90</p>
+                    <button onclick="adicionarAoCarrinho(51,90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>8GB</h2>
+                    <p class="preco">R$ 70,00</p>
+                    <button onclick="adicionarAoCarrinho(50,00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="produto">
+                    <h2>120GB</h2>
+                    <p class="preco">R$ 90,00</p>
+                    <button onclick="adicionarAoCarrinho(90,00)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>240GB</h2>
+                    <p class="preco">R$ 141,90</p>
+                    <button onclick="adicionarAoCarrinho(141,90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>480GB</h2>
+                    <p class="preco">R$ 247,90</p>
+                    <button onclick="adicionarAoCarrinho(247,90)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="produto">
+                    <h2>H61</h2>
+                    <p class="preco">R$ 179,90</p>
+                    <button onclick="adicionarAoCarrinho(179,90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>H81</h2>
+                    <p class="preco">R$ 216,90</p>
+                    <button onclick="adicionarAoCarrinho(216,90)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="produto">
+                    <h2>Gabinete</h2>
+                    <p class="preco">R$ 140,00</p>
+                    <button onclick="adicionarAoCarrinho(140,00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="carrinho">
+            <h2>Carrinho</h2>
+            <p>Total: R$ <span id="total">0.00</span></p>
+            <button class="whatsapp-button">
+                <a href="https://linktr.ee/quironcomputadores?utm_source=linktree_admin_share" target="_blank">Finalizar Pedido no WhatsApp</a>
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja de Produtos</p>
+    </footer>
+
+    <script>
+        let totalCarrinho = 0;
+
+        function adicionarAoCarrinho(preco) {
+            totalCarrinho += preco;
+            document.getElementById('total').textContent = totalCarrinho.toFixed(2);
+            alert('Produto adicionado ao carrinho! Total: R$ ' + totalCarrinho.toFixed(2));
+        }
+    </script>
+</body>
+</html>
